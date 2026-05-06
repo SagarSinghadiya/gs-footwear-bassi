@@ -1,0 +1,8 @@
+{
+  "name": "GS Footwear Bassi",
+  "description": "High-converting, mobile-first website for a local footwear retail business in Bassi, Jaipur.",
+  "requestFramePermissions": [
+    "geolocation"
+  ],
+  "majorCapabilities": []
+}
