@@ -109,11 +109,20 @@ export default function AdminDashboard() {
 
     setUploading(true);
     try {
-      // Compress image to base64
-      const base64Image = await compressImage(imageFile, 800, 0.7);
+      console.log('Starting image compression...');
+      // Compress image to base64 (reduced size to max 500px, quality 0.5)
+      const base64Image = await compressImage(imageFile, 500, 0.5);
+      console.log('Image compressed successfully. Base64 length:', base64Image.length);
 
+      if (base64Image.length > 800000) {
+         throw new Error('Image is still too large even after compression.');
+      }
+
+      console.log('Attempting to upload to Firestore...');
+      
       // Add product to Firestore with base64 image
-      await addDoc(collection(db, 'products'), {
+      // Wrap addDoc in a Promise.race to prevent infinite hanging
+      const uploadPromise = addDoc(collection(db, 'products'), {
         name,
         brand,
         category,
@@ -121,6 +130,13 @@ export default function AdminDashboard() {
         imageUrl: base64Image,
         createdAt: serverTimestamp(),
       });
+
+      const timeoutPromise = new Promise((_, reject) => 
+        setTimeout(() => reject(new Error('Upload timeout! Check your internet connection and verify that Cloud Firestore database is created in your Firebase Console.')), 15000)
+      );
+
+      await Promise.race([uploadPromise, timeoutPromise]);
+      console.log('Upload successful!');
 
       // Reset form
       setName('');
@@ -130,9 +146,10 @@ export default function AdminDashboard() {
       setImageFile(null);
       setImagePreview(null);
       setShowForm(false);
-    } catch (err) {
+      alert('Product successfully added!');
+    } catch (err: any) {
       console.error('Error adding product:', err);
-      alert('Product add karne me error aaya. Dobara try karein.');
+      alert('Error: ' + (err.message || 'Product add karne me error aaya. Dobara try karein.'));
     } finally {
       setUploading(false);
     }
