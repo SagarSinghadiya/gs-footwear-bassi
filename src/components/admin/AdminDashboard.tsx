@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react';
 import { signOut, onAuthStateChanged, User } from 'firebase/auth';
 import { collection, addDoc, deleteDoc, doc, query, orderBy, onSnapshot, serverTimestamp } from 'firebase/firestore';
-import { ref, uploadBytes, getDownloadURL, deleteObject } from 'firebase/storage';
-import { auth, db, storage } from '../../lib/firebase';
+import { auth, db } from '../../lib/firebase';
 import { Product } from '../../lib/useProducts';
 import { LogOut, Plus, Trash2, Upload, Package, Image, X, ShoppingBag, AlertCircle } from 'lucide-react';
 import AdminLogin from './AdminLogin';
@@ -17,6 +16,39 @@ const CATEGORIES = [
   "Casual",
   "Other",
 ];
+
+// Compress and resize image to base64
+function compressImage(file: File, maxWidth = 800, quality = 0.7): Promise<string> {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      const img = new window.Image();
+      img.onload = () => {
+        const canvas = document.createElement('canvas');
+        let { width, height } = img;
+
+        // Scale down if too large
+        if (width > maxWidth) {
+          height = (height * maxWidth) / width;
+          width = maxWidth;
+        }
+
+        canvas.width = width;
+        canvas.height = height;
+        const ctx = canvas.getContext('2d')!;
+        ctx.drawImage(img, 0, 0, width, height);
+
+        // Convert to compressed JPEG base64
+        const base64 = canvas.toDataURL('image/jpeg', quality);
+        resolve(base64);
+      };
+      img.onerror = reject;
+      img.src = e.target?.result as string;
+    };
+    reader.onerror = reject;
+    reader.readAsDataURL(file);
+  });
+}
 
 export default function AdminDashboard() {
   const [user, setUser] = useState<User | null>(null);
@@ -57,8 +89,8 @@ export default function AdminDashboard() {
   const handleImageSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
-      if (file.size > 5 * 1024 * 1024) {
-        alert('Image 5MB se chhoti honi chahiye!');
+      if (file.size > 10 * 1024 * 1024) {
+        alert('Image 10MB se chhoti honi chahiye!');
         return;
       }
       setImageFile(file);
@@ -77,20 +109,16 @@ export default function AdminDashboard() {
 
     setUploading(true);
     try {
-      // Upload image to Firebase Storage
-      const timestamp = Date.now();
-      const storageRef = ref(storage, `products/${timestamp}_${imageFile.name}`);
-      const snapshot = await uploadBytes(storageRef, imageFile);
-      const imageUrl = await getDownloadURL(snapshot.ref);
+      // Compress image to base64
+      const base64Image = await compressImage(imageFile, 800, 0.7);
 
-      // Add product to Firestore
+      // Add product to Firestore with base64 image
       await addDoc(collection(db, 'products'), {
         name,
         brand,
         category,
         benefit,
-        imageUrl,
-        storagePath: `products/${timestamp}_${imageFile.name}`,
+        imageUrl: base64Image,
         createdAt: serverTimestamp(),
       });
 
@@ -115,19 +143,7 @@ export default function AdminDashboard() {
     
     setDeleting(product.id);
     try {
-      // Delete from Firestore
       await deleteDoc(doc(db, 'products', product.id));
-      
-      // Delete from Storage (if storagePath exists)
-      const storagePath = (product as any).storagePath;
-      if (storagePath) {
-        try {
-          const storageRef = ref(storage, storagePath);
-          await deleteObject(storageRef);
-        } catch (e) {
-          // Image might already be deleted, ignore
-        }
-      }
     } catch (err) {
       console.error('Error deleting product:', err);
       alert('Delete karne me error aaya.');
@@ -248,7 +264,7 @@ export default function AdminDashboard() {
                     <label className="flex flex-col items-center justify-center aspect-[4/3] border-2 border-dashed border-gray-700 rounded-xl cursor-pointer hover:border-brand-red hover:bg-gray-800/50 transition-colors">
                       <Upload size={32} className="text-gray-500 mb-2" />
                       <p className="text-gray-400 text-sm font-medium">Photo select karo</p>
-                      <p className="text-gray-600 text-xs mt-1">JPG, PNG — Max 5MB</p>
+                      <p className="text-gray-600 text-xs mt-1">JPG, PNG — Max 10MB</p>
                       <input
                         type="file"
                         accept="image/*"
