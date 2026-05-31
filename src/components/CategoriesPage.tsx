@@ -26,10 +26,24 @@ export default function CategoriesPage() {
   const activeCategory = searchParams.get('selected') || 'All';
   const [searchQuery, setSearchQuery] = useState('');
 
-  // Scroll to top on page load
+  // Scroll to top and update dynamic SEO headers on page/category change
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, []);
+    
+    // Dynamic page title based on active category
+    const categoryTitle = activeCategory === 'All' ? 'Store Catalog' : `${activeCategory} Collection`;
+    document.title = `${categoryTitle} | GS Footwear Bassi - Branded Shoes`;
+    
+    // Dynamic meta description to prevent search-drift issues
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      if (activeCategory === 'All') {
+        metaDescription.setAttribute('content', 'Browse the premium shoe catalog at GS Footwear Bassi, Jaipur. Shop running shoes, lifestyle sneakers, formal wear, and boots at best prices.');
+      } else {
+        metaDescription.setAttribute('content', `Explore our ${activeCategory.toLowerCase()} collection at GS Footwear Bassi, Jaipur. Shop premium authentic designs, latest sizes, and reserve via WhatsApp.`);
+      }
+    }
+  }, [activeCategory]);
 
   const handleCategorySelect = (categoryName: string) => {
     setSearchParams({ selected: categoryName });
@@ -176,7 +190,7 @@ export default function CategoriesPage() {
                         <span className="absolute top-2 left-2 sm:top-3 sm:left-3 bg-brand-red text-white text-[8px] sm:text-[9px] font-black uppercase px-1.5 py-0.5 sm:px-2 sm:py-1 rounded-sm z-10">
                           {product.category}
                         </span>
-                        <img src={product.imageUrl} alt={product.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                        <img src={product.imageUrl} alt={`${product.brand} ${product.name} at GS Footwear Bassi`} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                       </div>
                       <div className="p-3 sm:p-5 flex-grow flex flex-col justify-between min-w-0">
                         <div className="min-w-0">

@@ -47,7 +47,7 @@ export default function NewArrivals() {
                 <div key={product.id} className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group border border-gray-100 flex flex-col">
                   <div className="relative aspect-[4/3] overflow-hidden bg-gray-100 shrink-0">
                     <span className="absolute top-2 left-2 sm:top-3 sm:left-3 bg-brand-red text-white text-[8px] sm:text-[9px] font-black uppercase px-1.5 py-0.5 sm:px-2 sm:py-1 rounded-sm z-10">New</span>
-                    <img src={product.imageUrl} alt={product.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                    <img src={product.imageUrl} alt={`${product.brand} ${product.name} - Latest Arrival at GS Footwear Bassi`} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
                   </div>
                   <div className="p-3 sm:p-5 flex-1 flex flex-col justify-between">
                     <div>

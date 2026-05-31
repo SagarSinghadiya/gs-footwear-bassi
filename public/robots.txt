@@ -1,0 +1,9 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+# Disallow admin panel crawling to prevent public exposure in search indices
+Disallow: /admin
+
+# Sitemap URL
+Sitemap: https://gsfootwear.in/sitemap.xml
