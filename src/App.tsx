@@ -14,7 +14,7 @@ import CategoriesPage from './components/CategoriesPage';
 
 function HomePage() {
   return (
-    <main className="relative bg-white selection:bg-brand-red selection:text-white">
+    <main className="relative bg-white selection:bg-brand-red selection:text-white overflow-x-hidden">
       <Navbar />
       <Hero />
       <TrustStrip />

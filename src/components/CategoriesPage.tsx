@@ -53,7 +53,7 @@ export default function CategoriesPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col font-sans">
+    <div className="min-h-screen bg-gray-50 flex flex-col font-sans overflow-x-hidden">
       <Navbar />
 
       {/* Main Content Spacer */}
@@ -89,7 +89,7 @@ export default function CategoriesPage() {
           <div className="grid lg:grid-cols-4 gap-8 items-start">
             
             {/* Sidebar / Left Column (Desktop) & Top Horizontal Bar (Mobile) */}
-            <div className="lg:col-span-1 lg:sticky lg:top-36 z-25">
+            <div className="lg:col-span-1 lg:sticky lg:top-36 z-25 w-full min-w-0">
               {/* Desktop Categories Panel */}
               <div className="hidden lg:block bg-white border border-gray-100 rounded-2xl p-6 shadow-sm">
                 <h3 className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">Categories</h3>
@@ -122,7 +122,7 @@ export default function CategoriesPage() {
               </div>
 
               {/* Mobile Horizontally Scrollable Pills */}
-              <div className="lg:hidden overflow-x-auto no-scrollbar flex gap-2 pb-3 mb-6 border-b border-gray-100">
+              <div className="lg:hidden w-full max-w-full overflow-x-auto no-scrollbar flex gap-2 pb-3 mb-6 border-b border-gray-100">
                 {CATEGORIES.map((cat) => {
                   const isActive = activeCategory.toLowerCase() === cat.toLowerCase();
                   const count = getCategoryCount(cat);
@@ -149,7 +149,7 @@ export default function CategoriesPage() {
             </div>
 
             {/* Products Display (Right 3 Columns) */}
-            <div className="lg:col-span-3">
+            <div className="lg:col-span-3 w-full min-w-0">
               {loading ? (
                 // Skeleton Grid Loaders (Fully responsive list-on-mobile / grid-on-desktop structure)
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
