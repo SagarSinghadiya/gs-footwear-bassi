@@ -58,7 +58,7 @@ export default function Footer() {
 
         </div>
 
-        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-gray-500 text-sm font-medium">
+        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-gray-500 text-sm font-medium text-center md:text-left">
           <p>© {new Date().getFullYear()} GS Footwear Bassi. All rights reserved.</p>
           <p>Bassi's Premium Local Retailer</p>
         </div>

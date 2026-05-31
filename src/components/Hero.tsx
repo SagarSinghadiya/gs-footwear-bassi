@@ -24,7 +24,7 @@ export default function Hero() {
               New Stock Alert ⚡
             </div>
 
-            <h1 className="text-5xl sm:text-6xl md:text-7xl font-heading font-black leading-[1.1] text-brand-black tracking-tight">
+            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-heading font-black leading-[1.1] text-brand-black tracking-tight">
               Best Branded<br />
               <span className="text-brand-red">Footwear</span> In Bassi.
             </h1>
