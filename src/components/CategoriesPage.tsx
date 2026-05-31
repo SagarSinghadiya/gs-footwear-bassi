@@ -122,7 +122,7 @@ export default function CategoriesPage() {
               </div>
 
               {/* Mobile Horizontally Scrollable Pills */}
-              <div className="lg:hidden -mx-4 px-4 overflow-x-auto no-scrollbar flex gap-2 pb-3 mb-6 border-b border-gray-100">
+              <div className="lg:hidden overflow-x-auto no-scrollbar flex gap-2 pb-3 mb-6 border-b border-gray-100">
                 {CATEGORIES.map((cat) => {
                   const isActive = activeCategory.toLowerCase() === cat.toLowerCase();
                   const count = getCategoryCount(cat);
@@ -151,39 +151,39 @@ export default function CategoriesPage() {
             {/* Products Display (Right 3 Columns) */}
             <div className="lg:col-span-3">
               {loading ? (
-                // Skeleton Grid Loaders
-                <div className="grid grid-cols-2 gap-3 sm:gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                // Skeleton Grid Loaders (Fully responsive list-on-mobile / grid-on-desktop structure)
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
                   {[1, 2, 3, 4, 5, 6].map((i) => (
-                    <div key={i} className="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 animate-pulse flex flex-col">
-                      <div className="aspect-[4/3] bg-gray-200 shrink-0"></div>
-                      <div className="p-3 sm:p-5 flex-grow flex flex-col justify-between space-y-3">
+                    <div key={i} className="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 animate-pulse flex flex-row sm:flex-col h-auto sm:h-full">
+                      <div className="w-28 h-28 sm:w-full sm:aspect-[4/3] sm:h-auto bg-gray-200 shrink-0"></div>
+                      <div className="p-3 sm:p-5 flex-grow flex flex-col justify-between space-y-3 min-w-0">
                         <div>
                           <div className="h-3 bg-gray-200 rounded w-1/3 mb-1"></div>
-                          <div className="h-5 bg-gray-200 rounded w-2/3 mb-1"></div>
+                          <div className="h-4 bg-gray-200 rounded w-2/3 mb-1"></div>
                           <div className="h-3 bg-gray-200 rounded w-1/2"></div>
                         </div>
-                        <div className="h-8 sm:h-10 bg-gray-100 rounded-lg mt-4"></div>
+                        <div className="h-6 sm:h-10 bg-gray-100 rounded-lg mt-2 sm:mt-4"></div>
                       </div>
                     </div>
                   ))}
                 </div>
               ) : filteredProducts.length > 0 ? (
-                // Products Grid (Optimized responsive 2-column mobile layout)
-                <div className="grid grid-cols-2 gap-3 sm:gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                // Products Grid (Optimized responsive 1-column horizontal-card list layout on mobile, 3-column vertical grid on desktop)
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
                   {filteredProducts.map((product) => (
-                    <div key={product.id} className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group border border-gray-100 flex flex-col">
-                      <div className="relative aspect-[4/3] overflow-hidden bg-gray-100 shrink-0">
+                    <div key={product.id} className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group border border-gray-100 flex flex-row sm:flex-col h-auto sm:h-full">
+                      <div className="relative w-28 h-28 sm:w-full sm:aspect-[4/3] sm:h-auto overflow-hidden bg-gray-100 shrink-0">
                         <span className="absolute top-2 left-2 sm:top-3 sm:left-3 bg-brand-red text-white text-[8px] sm:text-[9px] font-black uppercase px-1.5 py-0.5 sm:px-2 sm:py-1 rounded-sm z-10">
                           {product.category}
                         </span>
                         <img src={product.imageUrl} alt={product.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                       </div>
-                      <div className="p-3 sm:p-5 flex-grow flex flex-col justify-between">
-                        <div>
-                          <p className="text-[9px] sm:text-xs font-bold text-gray-400 uppercase tracking-wider mb-1">{product.brand}</p>
-                          <h3 className="font-heading font-bold text-xs sm:text-base md:text-xl text-brand-black mb-1 group-hover:text-brand-red transition-colors line-clamp-1">{product.name}</h3>
-                          <p className="text-[10px] sm:text-xs md:text-sm text-gray-500 font-medium mb-2 line-clamp-1 sm:line-clamp-none">{product.benefit}</p>
-                          <p className="text-sm sm:text-base md:text-lg font-black text-brand-red mb-4">
+                      <div className="p-3 sm:p-5 flex-grow flex flex-col justify-between min-w-0">
+                        <div className="min-w-0">
+                          <p className="text-[9px] sm:text-xs font-bold text-gray-400 uppercase tracking-wider mb-0.5 sm:mb-1">{product.brand}</p>
+                          <h3 className="font-heading font-bold text-sm sm:text-base md:text-xl text-brand-black mb-0.5 sm:mb-1 group-hover:text-brand-red transition-colors truncate sm:line-clamp-1">{product.name}</h3>
+                          <p className="text-[10px] sm:text-xs md:text-sm text-gray-500 font-medium mb-1.5 sm:mb-2 truncate sm:line-clamp-none">{product.benefit}</p>
+                          <p className="text-sm sm:text-base md:text-lg font-black text-brand-red mb-2 sm:mb-4">
                             ₹{Number(product.price) ? Number(product.price).toLocaleString('en-IN') : product.price}
                           </p>
                         </div>
@@ -191,7 +191,7 @@ export default function CategoriesPage() {
                           href={`https://wa.me/918058102782?text=I%20want%20to%20buy%20${encodeURIComponent(product.name)}%20by%20${encodeURIComponent(product.brand)}%20for%20RS%20${encodeURIComponent(product.price)}`} 
                           target="_blank" 
                           rel="noopener noreferrer" 
-                          className="w-full bg-gray-100 hover:bg-brand-whatsapp hover:text-white text-brand-black font-bold py-2 sm:py-2.5 rounded-lg text-center text-xs sm:text-sm transition-colors mt-auto block"
+                          className="w-full bg-gray-100 hover:bg-brand-whatsapp hover:text-white text-brand-black font-bold py-1.5 sm:py-2.5 rounded-lg text-center text-xs sm:text-sm transition-colors mt-auto block whitespace-nowrap overflow-hidden text-ellipsis"
                         >
                           Reserve via WhatsApp
                         </a>
