@@ -1,9 +1,9 @@
-# GS Footwear Bassi
+# GS Footwear
 
 > Premium local footwear retailer in Bassi, Jaipur, offering original branded shoes at reasonable and highly competitive prices. Easy size reservation via direct WhatsApp links.
 
 ## Core Store Information
-- **Name**: GS Footwear Bassi
+- **Name**: GS Footwear
 - **Location**: Opposite Canara Bank, near Bidaji Ka Mandir, New Low Floor Bus Stand, Bassi, Jaipur, Rajasthan 303301
 - **Geographic Coordinates**: Latitude `26.837839`, Longitude `75.986616` (Bassi, Jaipur)
 - **Phone / WhatsApp**: +91 80581 02782

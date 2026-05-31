@@ -17,7 +17,7 @@ import FAQ from './components/FAQ';
 function HomePage() {
   // Reset dynamic metadata and canonical headers on homepage mount
   useEffect(() => {
-    document.title = "GS Footwear Bassi | Best Branded Shoes in Bassi";
+    document.title = "GS Footwear | Best Branded Shoes in Bassi";
     
     const defaultDesc = "Shop branded shoes at reasonable prices. Located opposite Canara Bank, Bassi. New stock alert! WhatsApp us for orders.";
     
@@ -30,7 +30,7 @@ function HomePage() {
     // OpenGraph Dynamic Tags
     const ogTitle = document.querySelector('meta[property="og:title"]');
     if (ogTitle) {
-      ogTitle.setAttribute('content', "GS Footwear Bassi | Best Branded Shoes in Bassi");
+      ogTitle.setAttribute('content', "GS Footwear | Best Branded Shoes in Bassi");
     }
     const ogDescription = document.querySelector('meta[property="og:description"]');
     if (ogDescription) {

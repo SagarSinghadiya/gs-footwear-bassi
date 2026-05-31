@@ -32,13 +32,13 @@ export default function CategoriesPage() {
     
     // Dynamic page title based on active category
     const categoryTitle = activeCategory === 'All' ? 'Store Catalog' : `${activeCategory} Collection`;
-    const fullTitle = `${categoryTitle} | GS Footwear Bassi - Branded Shoes`;
+    const fullTitle = `${categoryTitle} | GS Footwear - Branded Shoes`;
     document.title = fullTitle;
     
     // Dynamic meta description content
     const descText = activeCategory === 'All'
-      ? 'Browse the premium shoe catalog at GS Footwear Bassi, Jaipur. Shop running shoes, lifestyle sneakers, formal wear, and boots at best prices.'
-      : `Explore our ${activeCategory.toLowerCase()} collection at GS Footwear Bassi, Jaipur. Shop premium authentic designs, latest sizes, and reserve via WhatsApp.`;
+      ? 'Browse the premium shoe catalog at GS Footwear, Jaipur. Shop running shoes, lifestyle sneakers, formal wear, and boots at best prices.'
+      : `Explore our ${activeCategory.toLowerCase()} collection at GS Footwear, Jaipur. Shop premium authentic designs, latest sizes, and reserve via WhatsApp.`;
 
     // Standard Meta Description
     const metaDescription = document.querySelector('meta[name="description"]');
@@ -215,7 +215,7 @@ export default function CategoriesPage() {
                         <span className="absolute top-2 left-2 sm:top-3 sm:left-3 bg-brand-red text-white text-[8px] sm:text-[9px] font-black uppercase px-1.5 py-0.5 sm:px-2 sm:py-1 rounded-sm z-10">
                           {product.category}
                         </span>
-                        <img src={product.imageUrl} alt={`${product.brand} ${product.name} at GS Footwear Bassi`} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                        <img src={product.imageUrl} alt={`${product.brand} ${product.name} at GS Footwear`} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                       </div>
                       <div className="p-3 sm:p-5 flex-grow flex flex-col justify-between min-w-0">
                         <div className="min-w-0">

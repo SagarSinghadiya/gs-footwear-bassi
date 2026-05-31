@@ -25,7 +25,7 @@ const faqs: FAQItem[] = [
     answer: "We offer all major footwear varieties under one roof: high-performance running/sports shoes, trendy casual sneakers, premium leather formal shoes, durable daily wear slippers, rugged casual boots, and kids' footwear."
   },
   {
-    question: "What are the opening hours for GS Footwear Bassi?",
+    question: "What are the opening hours for GS Footwear?",
     answer: "We are open 7 days a week, from Monday to Sunday, between 9:00 AM and 9:00 PM. Feel free to visit us any day of the week to check out our latest arrivals!"
   }
 ];

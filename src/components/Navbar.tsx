@@ -28,7 +28,7 @@ export default function Navbar() {
         {/* Logo */}
         <Link to="/" className="flex-shrink-0 flex items-center">
           <div className="text-lg sm:text-2xl font-heading font-black tracking-tighter uppercase text-brand-black">
-            GS Footwear <span className="text-brand-red">Bassi</span>
+            GS <span className="text-brand-red">Footwear</span>
           </div>
         </Link>
 

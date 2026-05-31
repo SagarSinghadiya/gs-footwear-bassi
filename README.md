@@ -1,10 +1,10 @@
 <div align="center">
-  <img width="1200" height="475" alt="GS Footwear Bassi Banner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+  <img width="1200" height="475" alt="GS Footwear Banner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
 </div>
 
-# 👟 GS Footwear Bassi
+# 👟 GS Footwear
 
-A beautiful, premium, and fully responsive Single Page Application (SPA) with a dedicated **Store Catalog** and **Admin Dashboard** designed for **GS Footwear Bassi** in Bassi, Jaipur.
+A beautiful, premium, and fully responsive Single Page Application (SPA) with a dedicated **Store Catalog** and **Admin Dashboard** designed for **GS Footwear** in Bassi, Jaipur.
 
 ---
 

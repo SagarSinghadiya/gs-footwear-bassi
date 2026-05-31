@@ -9,7 +9,7 @@ export default function Footer() {
           
           <div className="flex flex-col gap-6 col-span-2 md:col-span-1">
              <div className="text-3xl font-heading font-black tracking-tighter uppercase text-white">
-               GS Footwear <span className="text-brand-red">Bassi</span>
+               GS <span className="text-brand-red">Footwear</span>
              </div>
              <p className="text-gray-400 font-medium leading-relaxed max-w-sm">
                Your trusted local footwear retailer. We bring the latest branded shoes to Bassi at prices you will love. Comfort + style guaranteed.
@@ -59,7 +59,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-white/10 pt-8 flex flex-row items-center justify-between gap-4 text-gray-500 text-[10px] sm:text-sm font-medium">
-          <p>© {new Date().getFullYear()} GS Footwear Bassi. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} GS Footwear. All rights reserved.</p>
           <p className="hidden xs:block">Bassi's Premium Retailer</p>
         </div>
       </div>

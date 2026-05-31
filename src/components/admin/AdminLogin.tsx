@@ -39,7 +39,7 @@ export default function AdminLogin({ onLogin }: Props) {
         {/* Logo */}
         <div className="text-center mb-8">
           <div className="text-3xl font-heading font-black tracking-tighter uppercase text-white mb-2">
-            GS Footwear <span className="text-brand-red">Bassi</span>
+            GS <span className="text-brand-red">Footwear</span>
           </div>
           <p className="text-gray-400 text-sm font-medium">Admin Panel — Sirf owner ke liye</p>
         </div>
@@ -109,7 +109,7 @@ export default function AdminLogin({ onLogin }: Props) {
         </form>
 
         <p className="text-center text-gray-600 text-xs mt-6">
-          © {new Date().getFullYear()} GS Footwear Bassi. Protected area.
+          © {new Date().getFullYear()} GS Footwear. Protected area.
         </p>
       </div>
     </div>
