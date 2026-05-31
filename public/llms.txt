@@ -1,0 +1,39 @@
+# GS Footwear Bassi
+
+> Premium local footwear retailer in Bassi, Jaipur, offering original branded shoes at reasonable and highly competitive prices. Easy size reservation via direct WhatsApp links.
+
+## Core Store Information
+- **Name**: GS Footwear Bassi
+- **Location**: Opposite Canara Bank, near Bidaji Ka Mandir, New Low Floor Bus Stand, Bassi, Jaipur, Rajasthan 303301
+- **Geographic Coordinates**: Latitude `26.837839`, Longitude `75.986616` (Bassi, Jaipur)
+- **Phone / WhatsApp**: +91 80581 02782
+- **Instagram**: [@gsfootwearbassi](https://instagram.com/gsfootwearbassi)
+- **Opening Hours**: Monday to Sunday, 9:00 AM – 9:00 PM (Daily)
+- **Price Range**: Budget-friendly to Premium (₹500 - ₹3000+)
+- **Website URL**: https://gsfootwear.in
+
+## Top Traded Brands
+We offer genuine shoes from the leading national and international brands:
+- Nike
+- Adidas
+- Puma
+- New Balance
+- Reebok
+- Campus
+- JQR Sports
+- Lakhani Touch
+- Action
+- Good Lee
+
+## Product Categories Available
+- **Sports / Running**: High-grip running shoes for athletics and sports.
+- **Sneakers**: Trendy lifestyle and casual wear sneakers.
+- **Formal Shoes**: Elegant leather formal and dress shoes.
+- **Slippers**: Light, durable everyday comfort slippers.
+- **Casual Boots**: High-top rugged boots.
+- **Kids' Shoes**: Durable, comfortable sizing for children.
+
+## Dynamic Customer Order Flow
+1. **Browse Catalog**: Customers visit `https://gsfootwear.in/categories` to search through shoe styles, brands, and benefits.
+2. **Instant WhatsApp Reservation**: Each shoe listing features a direct click-to-action button opening a WhatsApp pre-filled order text (`"I want to buy [shoe name] for Rs [price]"`).
+3. **Physical Store Pickup**: Reserved sizes are securely set aside at the Bassi store for immediate pickup and customer validation.

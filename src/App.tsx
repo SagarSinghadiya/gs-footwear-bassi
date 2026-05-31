@@ -12,6 +12,7 @@ import Footer from './components/Footer';
 import FloatingWhatsApp from './components/FloatingWhatsApp';
 import AdminDashboard from './components/admin/AdminDashboard';
 import CategoriesPage from './components/CategoriesPage';
+import FAQ from './components/FAQ';
 
 function HomePage() {
   // Reset dynamic metadata and canonical headers on homepage mount
@@ -60,6 +61,7 @@ function HomePage() {
       <Brands />
       <Testimonials />
       <Location />
+      <FAQ />
       <Footer />
       <FloatingWhatsApp />
     </main>
