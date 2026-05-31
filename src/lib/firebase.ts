@@ -3,12 +3,12 @@ import { getAuth } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCHrgl6DB8DPJ3FjqJJH6ztzcP2_DBhZ_s",
-  authDomain: "gs-footwear-bassi.firebaseapp.com",
-  projectId: "gs-footwear-bassi",
-  storageBucket: "gs-footwear-bassi.firebasestorage.app",
-  messagingSenderId: "371045105472",
-  appId: "1:371045105472:web:700c923af86018a07704a5"
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY || "AIzaSyAcgR9U9wVnoy5N4o-V2bBPjhEEo4v0V9Q",
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN || "gs-footwear-bassi-client.firebaseapp.com",
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID || "gs-footwear-bassi-client",
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET || "gs-footwear-bassi-client.firebasestorage.app",
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID || "950201331875",
+  appId: import.meta.env.VITE_FIREBASE_APP_ID || "1:950201331875:web:792f0545b36fde6f974f16"
 };
 
 const app = initializeApp(firebaseConfig);

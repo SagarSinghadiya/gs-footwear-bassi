@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 const categories = [
   { name: "Sports / Running", img: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&auto=format&fit=crop" },
   { name: "Sneakers", img: "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=600&auto=format&fit=crop" },
@@ -20,14 +22,18 @@ export default function Categories() {
 
         <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6">
           {categories.map((cat, idx) => (
-            <div key={idx} className="relative aspect-[4/3] rounded-2xl overflow-hidden group cursor-pointer bg-gray-100">
+            <Link 
+              key={idx} 
+              to={`/categories?selected=${encodeURIComponent(cat.name)}`}
+              className="relative aspect-[4/3] rounded-2xl overflow-hidden group cursor-pointer bg-gray-100 block shadow-sm hover:shadow-xl transition-all duration-300"
+            >
               <img src={cat.img} alt={cat.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
               <div className="absolute inset-x-0 bottom-0 p-4 sm:p-6">
                 <h3 className="text-white font-heading font-bold text-xl sm:text-2xl">{cat.name}</h3>
                 <div className="w-8 h-1 bg-brand-red mt-2 transform origin-left group-hover:scale-x-150 transition-transform"></div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

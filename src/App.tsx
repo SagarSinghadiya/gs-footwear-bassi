@@ -10,6 +10,7 @@ import Location from './components/Location';
 import Footer from './components/Footer';
 import FloatingWhatsApp from './components/FloatingWhatsApp';
 import AdminDashboard from './components/admin/AdminDashboard';
+import CategoriesPage from './components/CategoriesPage';
 
 function HomePage() {
   return (
@@ -34,6 +35,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/admin" element={<AdminDashboard />} />
+        <Route path="/categories" element={<CategoriesPage />} />
       </Routes>
     </BrowserRouter>
   );

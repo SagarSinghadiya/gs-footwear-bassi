@@ -8,6 +8,7 @@ export interface Product {
   brand: string;
   category: string;
   benefit: string;
+  price: string;
   imageUrl: string;
   createdAt: any;
 }
@@ -20,6 +21,7 @@ export const fallbackProducts: Product[] = [
     brand: "Nike",
     category: "Sports / Running",
     benefit: "Lightweight and comfortable",
+    price: "1599",
     imageUrl: "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=800&auto=format&fit=crop",
     createdAt: null,
   },
@@ -29,6 +31,7 @@ export const fallbackProducts: Product[] = [
     brand: "Puma",
     category: "Sneakers",
     benefit: "Premium look, easy to wear",
+    price: "1899",
     imageUrl: "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=800&auto=format&fit=crop",
     createdAt: null,
   },
@@ -38,6 +41,7 @@ export const fallbackProducts: Product[] = [
     brand: "Campus",
     category: "Sports / Running",
     benefit: "Anti-skid sole",
+    price: "1299",
     imageUrl: "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=800&auto=format&fit=crop",
     createdAt: null,
   },
@@ -47,6 +51,7 @@ export const fallbackProducts: Product[] = [
     brand: "Skechers",
     category: "Casual",
     benefit: "Cushioned insole, Best for daily wear",
+    price: "1499",
     imageUrl: "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=800&auto=format&fit=crop",
     createdAt: null,
   },

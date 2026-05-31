@@ -1,4 +1,5 @@
-import { Zap } from 'lucide-react';
+import { Zap, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { useProducts } from '../lib/useProducts';
 
 export default function NewArrivals() {
@@ -18,9 +19,9 @@ export default function NewArrivals() {
             </h2>
             <p className="text-gray-600 mt-3 max-w-xl text-lg">New stock aa gaya hai. Limited sizes available, size khatam hone se pehle book karein!</p>
           </div>
-          <a href="https://wa.me/918058102782?text=Hi,%20show%20me%20all%20new%20arrivals" target="_blank" rel="noopener noreferrer" className="bg-brand-black text-white px-6 py-3 rounded-xl font-bold hover:bg-gray-800 transition-colors inline-block text-center whitespace-nowrap">
-            Check All on WhatsApp
-          </a>
+          <Link to="/categories?selected=All" className="bg-brand-black text-white px-6 py-3 rounded-xl font-bold hover:bg-brand-red transition-all inline-block text-center whitespace-nowrap active:scale-95">
+            Check All on Store
+          </Link>
         </div>
 
         {loading ? (
@@ -38,26 +39,43 @@ export default function NewArrivals() {
             ))}
           </div>
         ) : (
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 shrink-0">
-            {products.slice(0, 8).map((product) => (
-              <div key={product.id} className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group border border-gray-100 flex flex-col">
-                <div className="relative aspect-[4/3] overflow-hidden bg-gray-100 shrink-0">
-                  <span className="absolute top-3 left-3 bg-brand-red text-white text-[10px] font-black uppercase px-2 py-1 rounded-sm z-10">New</span>
-                  <img src={product.imageUrl} alt={product.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
-                </div>
-                <div className="p-5 flex-1 flex flex-col justify-between">
-                  <div>
-                    <p className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-1">{product.brand}</p>
-                    <h3 className="font-heading font-bold text-xl text-brand-black mb-1">{product.name}</h3>
-                    <p className="text-sm text-gray-500 font-medium mb-4">{product.benefit}</p>
+          <>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 shrink-0">
+              {products.slice(0, 8).map((product) => (
+                <div key={product.id} className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group border border-gray-100 flex flex-col">
+                  <div className="relative aspect-[4/3] overflow-hidden bg-gray-100 shrink-0">
+                    <span className="absolute top-3 left-3 bg-brand-red text-white text-[10px] font-black uppercase px-2 py-1 rounded-sm z-10">New</span>
+                    <img src={product.imageUrl} alt={product.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
                   </div>
-                  <a href={`https://wa.me/918058102782?text=I%20want%20to%20buy%20${encodeURIComponent(product.name)}%20by%20${encodeURIComponent(product.brand)}`} target="_blank" rel="noopener noreferrer" className="w-full bg-gray-100 hover:bg-gray-200 text-brand-black font-bold py-2.5 rounded-lg text-center text-sm transition-colors mt-auto block">
-                    Reserve via WhatsApp
-                  </a>
+                  <div className="p-5 flex-1 flex flex-col justify-between">
+                    <div>
+                      <p className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-1">{product.brand}</p>
+                      <h3 className="font-heading font-bold text-xl text-brand-black mb-1">{product.name}</h3>
+                      <p className="text-sm text-gray-500 font-medium mb-2">{product.benefit}</p>
+                      <p className="text-lg font-black text-brand-red mb-4">
+                        ₹{Number(product.price) ? Number(product.price).toLocaleString('en-IN') : product.price}
+                      </p>
+                    </div>
+                    <a href={`https://wa.me/918058102782?text=I%20want%20to%20buy%20${encodeURIComponent(product.name)}%20by%20${encodeURIComponent(product.brand)}%20for%20RS%20${encodeURIComponent(product.price)}`} target="_blank" rel="noopener noreferrer" className="w-full bg-gray-100 hover:bg-brand-whatsapp hover:text-white text-brand-black font-bold py-2.5 rounded-lg text-center text-sm transition-colors mt-auto block">
+                      Reserve via WhatsApp
+                    </a>
+                  </div>
                 </div>
+              ))}
+            </div>
+
+            {products.length > 8 && (
+              <div className="text-center mt-12">
+                <Link 
+                  to="/categories?selected=All" 
+                  className="inline-flex items-center gap-2 bg-brand-black text-white hover:bg-brand-red px-8 py-4 rounded-xl font-bold transition-all hover:scale-105 active:scale-95 shadow-lg shadow-black/10"
+                >
+                  Show More Shoes
+                  <ArrowRight size={18} />
+                </Link>
               </div>
-            ))}
-          </div>
+            )}
+          </>
         )}
       </div>
     </section>

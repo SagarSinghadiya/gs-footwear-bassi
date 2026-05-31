@@ -1,4 +1,5 @@
 import { Instagram, MapPin, Phone } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export default function Footer() {
   return (
@@ -13,9 +14,16 @@ export default function Footer() {
              <p className="text-gray-400 font-medium leading-relaxed max-w-sm">
                Your trusted local footwear retailer. We bring the latest branded shoes to Bassi at prices you will love. Comfort + style guaranteed.
              </p>
-             <div className="flex items-center gap-4 mt-2">
-               <a href="https://instagram.com/gsfootwearbassi" target="_blank" rel="noopener noreferrer" className="bg-white/10 hover:bg-brand-red text-white p-3 rounded-full transition-colors">
-                 <Instagram size={20} />
+             <div className="flex flex-col gap-3 mt-2">
+               <span className="text-xs font-bold text-gray-400 uppercase tracking-widest">Follow Us On Instagram</span>
+               <a 
+                 href="https://instagram.com/gsfootwearbassi" 
+                 target="_blank" 
+                 rel="noopener noreferrer" 
+                 className="flex items-center gap-3 w-fit bg-gradient-to-tr from-[#f9ce34] via-[#ee2a7b] to-[#6228d7] text-white font-bold px-5 py-2.5 rounded-xl transition-all shadow-md hover:shadow-xl hover:shadow-pink-500/10 active:scale-95 group text-sm"
+               >
+                 <Instagram size={18} className="group-hover:rotate-12 transition-transform duration-300" />
+                 <span>@gsfootwearbassi</span>
                </a>
              </div>
           </div>
@@ -41,10 +49,10 @@ export default function Footer() {
           <div className="flex flex-col gap-6">
             <h4 className="font-heading font-bold text-xl uppercase tracking-wider text-white">Quick Links</h4>
             <div className="flex flex-col gap-3 text-gray-400 font-medium">
-              <a href="#home" className="hover:text-brand-red w-fit transition-colors">Home</a>
-              <a href="#new-arrivals" className="hover:text-brand-red w-fit transition-colors">New Arrivals</a>
-              <a href="#categories" className="hover:text-brand-red w-fit transition-colors">Categories</a>
-              <a href="#location" className="hover:text-brand-red w-fit transition-colors">Visit Store</a>
+              <a href="/#home" className="hover:text-brand-red w-fit transition-colors">Home</a>
+              <a href="/#new-arrivals" className="hover:text-brand-red w-fit transition-colors">New Arrivals</a>
+              <Link to="/categories" className="hover:text-brand-red w-fit transition-colors">Categories</Link>
+              <a href="/#location" className="hover:text-brand-red w-fit transition-colors">Visit Store</a>
             </div>
           </div>
 

@@ -63,6 +63,7 @@ export default function AdminDashboard() {
   const [brand, setBrand] = useState('');
   const [category, setCategory] = useState(CATEGORIES[0]);
   const [benefit, setBenefit] = useState('');
+  const [price, setPrice] = useState('');
   const [imageFile, setImageFile] = useState<File | null>(null);
   const [imagePreview, setImagePreview] = useState<string | null>(null);
 
@@ -127,6 +128,7 @@ export default function AdminDashboard() {
         brand,
         category,
         benefit,
+        price,
         imageUrl: base64Image,
         createdAt: serverTimestamp(),
       });
@@ -143,6 +145,7 @@ export default function AdminDashboard() {
       setBrand('');
       setCategory(CATEGORIES[0]);
       setBenefit('');
+      setPrice('');
       setImageFile(null);
       setImagePreview(null);
       setShowForm(false);
@@ -332,6 +335,19 @@ export default function AdminDashboard() {
                   </select>
                 </div>
 
+                {/* Price */}
+                <div>
+                  <label className="block text-gray-300 text-sm font-semibold mb-2">Price (₹) *</label>
+                  <input
+                    type="number"
+                    value={price}
+                    onChange={(e) => setPrice(e.target.value)}
+                    placeholder="e.g. 1499"
+                    className="w-full bg-gray-800 border border-gray-700 text-white px-4 py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-red placeholder:text-gray-600 font-medium"
+                    required
+                  />
+                </div>
+
                 {/* Benefit */}
                 <div>
                   <label className="block text-gray-300 text-sm font-semibold mb-2">Key Feature / Benefit *</label>
@@ -389,7 +405,8 @@ export default function AdminDashboard() {
                 <div className="p-4">
                   <p className="text-[11px] font-bold text-gray-500 uppercase tracking-wider mb-0.5">{product.brand}</p>
                   <h3 className="font-heading font-bold text-lg text-white mb-0.5 leading-tight">{product.name}</h3>
-                  <p className="text-sm text-gray-400 mb-4">{product.benefit}</p>
+                  <p className="text-sm text-gray-400 mb-1">{product.benefit}</p>
+                  <p className="text-base font-bold text-brand-red mb-4">₹{product.price}</p>
                   <button
                     onClick={() => handleDelete(product)}
                     disabled={deleting === product.id}
