@@ -70,16 +70,33 @@ function HomePage() {
 
 function AnalyticsTracker() {
   const location = useLocation();
+  const gaId = import.meta.env.VITE_GA_ID;
 
   useEffect(() => {
-    // Check if gtag is defined on the window object (Google Analytics setup)
+    if (!gaId) return;
+
+    // 1. Check if the script tag has already been injected to prevent duplicates
+    const scriptId = 'google-analytics-script';
+    let script = document.getElementById(scriptId) as HTMLScriptElement;
+    if (!script) {
+      script = document.createElement('script');
+      script.id = scriptId;
+      script.async = true;
+      script.src = `https://www.googletagmanager.com/gtag/js?id=${gaId}`;
+      document.head.appendChild(script);
+
+      // Disable default landing page_view trigger on script inject to prevent double counting in SPA
+      (window as any).gtag('config', gaId, { send_page_view: false });
+    }
+
+    // 2. Track route changes dynamically
     if (typeof (window as any).gtag === 'function') {
-      (window as any).gtag('config', 'G-42QEXWV8FH', {
+      (window as any).gtag('config', gaId, {
         page_path: location.pathname + location.search,
         page_title: document.title,
       });
     }
-  }, [location]);
+  }, [location, gaId]);
 
   return null;
 }
