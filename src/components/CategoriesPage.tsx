@@ -32,17 +32,42 @@ export default function CategoriesPage() {
     
     // Dynamic page title based on active category
     const categoryTitle = activeCategory === 'All' ? 'Store Catalog' : `${activeCategory} Collection`;
-    document.title = `${categoryTitle} | GS Footwear Bassi - Branded Shoes`;
+    const fullTitle = `${categoryTitle} | GS Footwear Bassi - Branded Shoes`;
+    document.title = fullTitle;
     
-    // Dynamic meta description to prevent search-drift issues
+    // Dynamic meta description content
+    const descText = activeCategory === 'All'
+      ? 'Browse the premium shoe catalog at GS Footwear Bassi, Jaipur. Shop running shoes, lifestyle sneakers, formal wear, and boots at best prices.'
+      : `Explore our ${activeCategory.toLowerCase()} collection at GS Footwear Bassi, Jaipur. Shop premium authentic designs, latest sizes, and reserve via WhatsApp.`;
+
+    // Standard Meta Description
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      if (activeCategory === 'All') {
-        metaDescription.setAttribute('content', 'Browse the premium shoe catalog at GS Footwear Bassi, Jaipur. Shop running shoes, lifestyle sneakers, formal wear, and boots at best prices.');
-      } else {
-        metaDescription.setAttribute('content', `Explore our ${activeCategory.toLowerCase()} collection at GS Footwear Bassi, Jaipur. Shop premium authentic designs, latest sizes, and reserve via WhatsApp.`);
-      }
+      metaDescription.setAttribute('content', descText);
     }
+
+    // Dynamic OpenGraph tags
+    const ogTitle = document.querySelector('meta[property="og:title"]');
+    if (ogTitle) {
+      ogTitle.setAttribute('content', fullTitle);
+    }
+    const ogDescription = document.querySelector('meta[property="og:description"]');
+    if (ogDescription) {
+      ogDescription.setAttribute('content', descText);
+    }
+    const ogUrl = document.querySelector('meta[property="og:url"]');
+    if (ogUrl) {
+      ogUrl.setAttribute('content', `https://gsfootwear.in/categories?selected=${encodeURIComponent(activeCategory)}`);
+    }
+
+    // Dynamic Canonical Link
+    let canonicalLink = document.querySelector('link[rel="canonical"]');
+    if (!canonicalLink) {
+      canonicalLink = document.createElement('link');
+      canonicalLink.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonicalLink);
+    }
+    canonicalLink.setAttribute('href', `https://gsfootwear.in/categories?selected=${encodeURIComponent(activeCategory)}`);
   }, [activeCategory]);
 
   const handleCategorySelect = (categoryName: string) => {
