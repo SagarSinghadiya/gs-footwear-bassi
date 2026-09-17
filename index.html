@@ -24,17 +24,35 @@
     <meta property="og:url" content="https://gsfootwear.in/" />
     <meta property="og:type" content="website" />
     
+    <!-- LLM Autodiscovery (Generative Engine Optimization) -->
+    <link rel="alternate" type="text/plain" href="https://gsfootwear.in/llms.txt" title="LLM Information" />
+    <link rel="alternate" type="text/plain" href="https://gsfootwear.in/llms-full.txt" title="Full Store AI Knowledge Base" />
+
     <!-- Local Business ShoeStore Structured Schema (JSON-LD) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "ShoeStore",
+      "@id": "https://gsfootwear.in/#shoestore",
       "name": "GS Footwear",
-      "description": "Best Branded Shoes in Bassi, Jaipur. Shop original Nike, Adidas, Puma, Campus, JQR, Lakhani at reasonable prices. Opposite Canara Bank.",
+      "alternateName": ["GS Footwear Bassi", "GS Shoes Bassi"],
+      "description": "Best Branded Shoes in Bassi, Jaipur. Shop 100% genuine Nike, Adidas, Puma, Campus, JQR, Lakhani at honest, reasonable prices. Located opposite Canara Bank.",
       "url": "https://gsfootwear.in",
       "telephone": "+918058102782",
-      "priceRange": "₹₹",
+      "currenciesAccepted": "INR",
+      "paymentAccepted": "Cash, UPI (Google Pay, PhonePe, Paytm, BHIM), Debit Card, Credit Card",
+      "priceRange": "₹499 - ₹3,999",
       "image": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1400",
+      "hasMap": "https://maps.google.com/?q=Canara+Bank+Bassi+Jaipur",
+      "areaServed": [
+        "Bassi",
+        "Jaipur",
+        "Rajasthan",
+        "Dausa",
+        "Chaksu",
+        "Kanota",
+        "Jamwa Ramgarh"
+      ],
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Opposite Canara Bank, near Bidaji Ka Mandir, New Low Floor Bus Stand",
@@ -62,8 +80,81 @@
         "opens": "09:00",
         "closes": "21:00"
       },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "GS Footwear Complete Footwear Catalog",
+        "itemListElement": [
+          {
+            "@type": "OfferCatalog",
+            "name": "Sports & Running Shoes",
+            "description": "High-grip athletic and running shoes from Nike, Campus, Adidas, JQR Sports"
+          },
+          {
+            "@type": "OfferCatalog",
+            "name": "Lifestyle & Casual Sneakers",
+            "description": "Trendy lifestyle sneakers and walking shoes from Puma, Nike, Campus"
+          },
+          {
+            "@type": "OfferCatalog",
+            "name": "Formal Shoes",
+            "description": "Premium leather office and wedding formal shoes"
+          },
+          {
+            "@type": "OfferCatalog",
+            "name": "Slippers & Slides",
+            "description": "Everyday comfort slides and durable slippers from Lakhani Touch and Good Lee"
+          },
+          {
+            "@type": "OfferCatalog",
+            "name": "Casual Boots",
+            "description": "Rugged high-top winter boots for outdoor travel"
+          },
+          {
+            "@type": "OfferCatalog",
+            "name": "Kids' Shoes",
+            "description": "Durable, comfortable sports and school footwear for children"
+          }
+        ]
+      },
       "sameAs": [
         "https://instagram.com/gsfootwearbassi"
+      ]
+    }
+    </script>
+
+    <!-- WebSite & SearchBox Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "@id": "https://gsfootwear.in/#website",
+      "url": "https://gsfootwear.in/",
+      "name": "GS Footwear",
+      "description": "Best Branded Shoes in Bassi, Jaipur",
+      "publisher": {
+        "@id": "https://gsfootwear.in/#shoestore"
+      }
+    }
+    </script>
+
+    <!-- BreadcrumbList Structured Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://gsfootwear.in/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Catalog & Categories",
+          "item": "https://gsfootwear.in/categories"
+        }
       ]
     }
     </script>
@@ -124,6 +215,24 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800;900&display=swap" rel="stylesheet">
   </head>
   <body class="antialiased text-gray-900 bg-gray-50">
+    <!-- Semantic Noscript Fallback for Headless AI Scrapers and Search Spiders -->
+    <noscript>
+      <div style="padding: 24px; font-family: system-ui, sans-serif; max-width: 800px; margin: 0 auto; line-height: 1.6;">
+        <h1>GS Footwear — Best Branded Shoes in Bassi, Jaipur</h1>
+        <p>Welcome to GS Footwear, the trusted footwear retailer in Bassi, Jaipur (Rajasthan 303301). We offer 100% original, genuine branded footwear at reasonable prices.</p>
+        <h2>Store Address & Location</h2>
+        <p>Opposite Canara Bank, near Bidaji Ka Mandir, New Low Floor Bus Stand, Bassi, Jaipur, Rajasthan 303301.</p>
+        <p><strong>Phone / WhatsApp:</strong> +91 80581 02782</p>
+        <p><strong>Store Timings:</strong> Monday to Sunday, 9:00 AM – 9:00 PM (Open 7 Days a Week)</p>
+        <p><strong>Payments:</strong> Cash, UPI (Google Pay, PhonePe, Paytm, BHIM), Debit & Credit Cards</p>
+        <h2>Brands Available</h2>
+        <p>Nike, Adidas, Puma, New Balance, Campus, JQR Sports, Lakhani Touch, Action, Good Lee.</p>
+        <h2>Shoe Categories</h2>
+        <p>Running & Sports Shoes, Casual Sneakers, Leather Formal Shoes, Comfort Slippers & Slides, Casual Boots, Kids' Footwear.</p>
+        <p><a href="https://wa.me/918058102782?text=Hello%20GS%20Footwear">Reserve Size on WhatsApp: +91 80581 02782</a></p>
+      </div>
+    </noscript>
+
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

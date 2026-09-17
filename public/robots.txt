@@ -1,9 +1,32 @@
 # https://www.robotstxt.org/robotstxt.html
 User-agent: *
 Allow: /
-
-# Disallow admin panel crawling to prevent public exposure in search indices
 Disallow: /admin
 
-# Sitemap URL
+# AI Search & Large Language Model Crawlers (Generative Engine Optimization)
+User-agent: GPTBot
+Allow: /
+Disallow: /admin
+
+User-agent: ChatGPT-User
+Allow: /
+Disallow: /admin
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /admin
+
+User-agent: ClaudeBot
+Allow: /
+Disallow: /admin
+
+User-agent: Google-Extended
+Allow: /
+Disallow: /admin
+
+User-agent: Applebot-Extended
+Allow: /
+Disallow: /admin
+
+# Sitemaps and AI Knowledge Base
 Sitemap: https://gsfootwear.in/sitemap.xml

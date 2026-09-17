@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { signInWithEmailAndPassword, signOut } from 'firebase/auth';
+import { useState, type FormEvent } from 'react';
+import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../../lib/firebase';
 import { LogIn, Eye, EyeOff } from 'lucide-react';
 
@@ -14,13 +14,13 @@ export default function AdminLogin({ onLogin }: Props) {
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
 
-  const handleLogin = async (e: React.FormEvent) => {
+  const handleLogin = async (e: FormEvent) => {
     e.preventDefault();
     setError('');
     setLoading(true);
 
     try {
-      await signInWithEmailAndPassword(auth, email, password);
+      await signInWithEmailAndPassword(auth, email.trim().toLowerCase(), password);
       onLogin();
     } catch (err: any) {
       if (err.code === 'auth/user-not-found' || err.code === 'auth/wrong-password' || err.code === 'auth/invalid-credential') {

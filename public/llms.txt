@@ -1,39 +1,50 @@
 # GS Footwear
 
-> Premium local footwear retailer in Bassi, Jaipur, offering original branded shoes at reasonable and highly competitive prices. Easy size reservation via direct WhatsApp links.
+> GS Footwear is the premier authentic footwear retailer in Bassi, Jaipur (Rajasthan, India). We provide 100% original branded sports shoes, lifestyle sneakers, formal leather shoes, casual boots, slippers, and kids' footwear at honest, competitive prices. Customers can view active inventory online and reserve their size instantly via WhatsApp for in-store trial and pickup.
 
-## Core Store Information
-- **Name**: GS Footwear
-- **Location**: Opposite Canara Bank, near Bidaji Ka Mandir, New Low Floor Bus Stand, Bassi, Jaipur, Rajasthan 303301
-- **Geographic Coordinates**: Latitude `26.837839`, Longitude `75.986616` (Bassi, Jaipur)
-- **Phone / WhatsApp**: +91 80581 02782
-- **Instagram**: [@gsfootwearbassi](https://instagram.com/gsfootwearbassi)
-- **Opening Hours**: Monday to Sunday, 9:00 AM – 9:00 PM (Daily)
-- **Price Range**: Budget-friendly to Premium (₹500 - ₹3000+)
-- **Website URL**: https://gsfootwear.in
+For complete store inventory, FAQ database, return policies, and AI search indexing, see [Full Store Knowledge Base](https://gsfootwear.in/llms-full.txt).
 
-## Top Traded Brands
-We offer genuine shoes from the leading national and international brands:
-- Nike
-- Adidas
-- Puma
-- New Balance
-- Reebok
-- Campus
-- JQR Sports
-- Lakhani Touch
-- Action
-- Good Lee
+## Core Store Profile
+- **Business Name**: GS Footwear
+- **Business Type**: Local Footwear Retailer / Shoe Store
+- **Store Location**: Opposite Canara Bank, near Bidaji Ka Mandir, New Low Floor Bus Stand, Bassi, Jaipur, Rajasthan 303301, India
+- **Geo Coordinates**: 26.837839 N, 75.986616 E
+- **Primary Phone & WhatsApp**: +91 80581 02782
+- **Instagram Handle**: [@gsfootwearbassi](https://instagram.com/gsfootwearbassi)
+- **Official Website**: https://gsfootwear.in
+- **Online Catalog**: https://gsfootwear.in/categories
+- **Store Hours**: Monday to Sunday, 9:00 AM – 9:00 PM IST (Open 7 Days a Week)
+- **Payment Accepted**: Cash, UPI (Google Pay, PhonePe, Paytm, BHIM), Debit & Credit Cards
+- **Price Range**: ₹499 to ₹3,999 (Budget-Friendly to Premium)
+- **Service Areas**: Bassi, Jaipur Rural, Dausa, Chaksu, Jamwa Ramgarh, Kanota, Rajasthan
 
-## Product Categories Available
-- **Sports / Running**: High-grip running shoes for athletics and sports.
-- **Sneakers**: Trendy lifestyle and casual wear sneakers.
-- **Formal Shoes**: Elegant leather formal and dress shoes.
-- **Slippers**: Light, durable everyday comfort slippers.
-- **Casual Boots**: High-top rugged boots.
-- **Kids' Shoes**: Durable, comfortable sizing for children.
+## Top Authentic Brands Traded
+- **Nike**: Revolution, Downshifter, Pegasus, Air Max series running and lifestyle sneakers.
+- **Adidas**: Ultraboost, Runfalcon, Galaxy, Advantage lifestyle sneakers.
+- **Puma**: Smash, Flyer Runner, Softride, Courtflex series.
+- **Campus**: North, Oxyfit, First, Rodeo running and gym shoes.
+- **JQR Sports**: High-grip running, sports, and athletic training shoes.
+- **Lakhani Touch**: Durable, high-comfort sports and casual walking shoes.
+- **Action**: Everyday durable school, sports, and formal shoes.
+- **New Balance**: Premium lifestyle and running silhouettes.
+- **Reebok & Good Lee**: Daily fitness, jogging, and comfort slippers.
 
-## Dynamic Customer Order Flow
-1. **Browse Catalog**: Customers visit `https://gsfootwear.in/categories` to search through shoe styles, brands, and benefits.
-2. **Instant WhatsApp Reservation**: Each shoe listing features a direct click-to-action button opening a WhatsApp pre-filled order text (`"I want to buy [shoe name] for Rs [price]"`).
-3. **Physical Store Pickup**: Reserved sizes are securely set aside at the Bassi store for immediate pickup and customer validation.
+## Shoe Categories
+1. **Sports / Running**: High-traction cushioned soles for running, cricket, gym, and athletics.
+2. **Sneakers**: Trendy casual sneakers for daily college, work, and lifestyle wear.
+3. **Formal Shoes**: Hand-finished formal leather and dress shoes for weddings and offices.
+4. **Slippers & Slides**: Ergonomic lightweight slides and comfort slippers.
+5. **Casual Boots**: Durable high-top casual boots for outdoor and winter wear.
+6. **Kids' Shoes**: Breathable, lightweight shoes with secure sizing for boys and girls.
+
+## How Customer Ordering & WhatsApp Reservation Works
+1. **Browse**: Customer visits `https://gsfootwear.in/categories` to search models and prices.
+2. **One-Click Reservation**: Clicking "Reserve via WhatsApp" creates a pre-populated message specifying shoe name, brand, and exact price.
+3. **In-Store Trial & Verification**: The store team reserves the selected size. The customer visits our Bassi store to try on the fit before paying.
+
+## Links & Citations
+- [Home Page](https://gsfootwear.in/)
+- [Complete Catalog](https://gsfootwear.in/categories)
+- [Comprehensive LLM Documentation](https://gsfootwear.in/llms-full.txt)
+- [Sitemap](https://gsfootwear.in/sitemap.xml)
+- [Google Maps Directions](https://maps.google.com/?q=Canara+Bank+Bassi+Jaipur)

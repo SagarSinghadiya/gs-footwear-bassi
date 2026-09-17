@@ -3,16 +3,54 @@
   <!-- Homepage -->
   <url>
     <loc>https://gsfootwear.in/</loc>
-    <lastmod>2026-05-31</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   
-  <!-- Categories Page -->
+  <!-- Store Catalog -->
   <url>
     <loc>https://gsfootwear.in/categories</loc>
-    <lastmod>2026-05-31</lastmod>
+    <lastmod>2026-09-17</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Category Specific Permalinks -->
+  <url>
+    <loc>https://gsfootwear.in/categories?selected=Sports%20%2F%20Running</loc>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gsfootwear.in/categories?selected=Sneakers</loc>
+    <lastmod>2026-09-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gsfootwear.in/categories?selected=Formal%20Shoes</loc>
+    <lastmod>2026-09-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gsfootwear.in/categories?selected=Slippers</loc>
+    <lastmod>2026-09-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://gsfootwear.in/categories?selected=Casual%20Boots</loc>
+    <lastmod>2026-09-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://gsfootwear.in/categories?selected=Kids'%20Shoes</loc>
+    <lastmod>2026-09-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
   </url>
 </urlset>

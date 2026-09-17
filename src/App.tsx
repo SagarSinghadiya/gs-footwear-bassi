@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, lazy, Suspense } from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
@@ -10,9 +10,18 @@ import Testimonials from './components/Testimonials';
 import Location from './components/Location';
 import Footer from './components/Footer';
 import FloatingWhatsApp from './components/FloatingWhatsApp';
-import AdminDashboard from './components/admin/AdminDashboard';
-import CategoriesPage from './components/CategoriesPage';
 import FAQ from './components/FAQ';
+
+const AdminDashboard = lazy(() => import('./components/admin/AdminDashboard'));
+const CategoriesPage = lazy(() => import('./components/CategoriesPage'));
+
+function PageLoader() {
+  return (
+    <div className="min-h-[50vh] flex items-center justify-center">
+      <div className="w-8 h-8 border-3 border-brand-red/20 border-t-brand-red rounded-full animate-spin"></div>
+    </div>
+  );
+}
 
 function HomePage() {
   // Reset dynamic metadata and canonical headers on homepage mount
@@ -105,11 +114,13 @@ export default function App() {
   return (
     <BrowserRouter>
       <AnalyticsTracker />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/admin" element={<AdminDashboard />} />
-        <Route path="/categories" element={<CategoriesPage />} />
-      </Routes>
+      <Suspense fallback={<PageLoader />}>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/admin" element={<AdminDashboard />} />
+          <Route path="/categories" element={<CategoriesPage />} />
+        </Routes>
+      </Suspense>
     </BrowserRouter>
   );
 }
