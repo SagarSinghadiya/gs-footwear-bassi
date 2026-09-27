@@ -58,9 +58,20 @@ export default function Footer() {
 
         </div>
 
-        <div className="border-t border-white/10 pt-8 flex flex-row items-center justify-between gap-4 text-gray-500 text-[10px] sm:text-sm font-medium">
+        <div className="border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-gray-400 text-xs sm:text-sm font-medium">
           <p>© {new Date().getFullYear()} GS Footwear. All rights reserved.</p>
-          <p className="hidden xs:block">Bassi's Premium Retailer</p>
+          <p className="flex items-center gap-1.5">
+            <span>Designed &amp; Developed by</span>
+            <a
+              href="https://operateai.in"
+              target="_blank"
+              rel="noopener"
+              title="OperateAI — Modern Web & AI Solutions"
+              className="text-white hover:text-brand-red font-semibold transition-colors underline decoration-brand-red/50 hover:decoration-brand-red underline-offset-2"
+            >
+              OperateAI
+            </a>
+          </p>
         </div>
       </div>
     </footer>

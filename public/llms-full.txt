@@ -127,3 +127,4 @@ GS Footwear serves as a major commercial retail hub for Bassi and adjacent rural
 - AI Index (Full): https://gsfootwear.in/llms-full.txt
 - Sitemap: https://gsfootwear.in/sitemap.xml
 - Google Maps: https://maps.google.com/?q=Canara+Bank+Bassi+Jaipur
+- Technology Partner & Web Development: [OperateAI](https://operateai.in)
